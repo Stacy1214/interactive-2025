@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,47 +8,31 @@
 <body>
 
     <h1 align="center">🐰🐢🐸🦊🦄🐶 🏁 Ultimate Animal Race! 🏁</h1>
-    <p align="center">Choose the winner and click <strong>"Start Race!"</strong></p>
+    <p align="center"><strong>Choose the winner ⬇️</strong></p>
 
     <br>
 
     <form align="center">
-        <label><input type="radio" name="winner" value="rabbit"> Rabbit 🐰 (Fast, but might be lazy)</label><br>
-        <label><input type="radio" name="winner" value="turtle"> Turtle 🐢 (Slow but persistent)</label><br>
-        <label><input type="radio" name="winner" value="frog"> Frog 🐸 (Medium speed, jumps)</label><br>
-        <label><input type="radio" name="winner" value="fox"> Fox 🦊 (Clever, might speed up suddenly)</label><br>
-        <label><input type="radio" name="winner" value="dog"> Dog 🐶 (Steady runner, balanced speed)</label><br>
-        <label><input type="radio" name="winner" value="unicorn"> Unicorn 🦄 (Mysterious, fastest!)</label>
+        <label><input type="radio" name="winner" value="rabbit" onclick="document.getElementById('race').open = true"> Rabbit 🐰 (Fast, but might be lazy)</label><br>
+        <label><input type="radio" name="winner" value="turtle" onclick="document.getElementById('race').open = true"> Turtle 🐢 (Slow but persistent)</label><br>
+        <label><input type="radio" name="winner" value="frog" onclick="document.getElementById('race').open = true"> Frog 🐸 (Medium speed, jumps)</label><br>
+        <label><input type="radio" name="winner" value="fox" onclick="document.getElementById('race').open = true"> Fox 🦊 (Clever, might speed up suddenly)</label><br>
+        <label><input type="radio" name="winner" value="dog" onclick="document.getElementById('race').open = true"> Dog 🐶 (Steady runner, balanced speed)</label><br>
+        <label><input type="radio" name="winner" value="unicorn" onclick="document.getElementById('race').open = true"> Unicorn 🦄 (Mysterious, fastest!)</label>
     </form>
 
-    <details align="center">
+     <details id="race" align="center">
         <summary><strong>🏁 Start Race! 🏁</strong></summary>
 
         <h2>The race begins!</h2>
 
-        <marquee behavior="scroll" direction="right" scrollamount="10" loop="1">
-            🐰🐰🐰
-        </marquee>
-
-        <marquee behavior="scroll" direction="right" scrollamount="14" loop="1">
-            🦄🦄🦄
-        </marquee>
-
-        <marquee behavior="scroll" direction="right" scrollamount="11" loop="1">
-            🐶🐶🐶
-        </marquee>
-
-        <marquee behavior="scroll" direction="right" scrollamount="12" loop="1">
-            🦊🦊🦊
-        </marquee>
-
-        <marquee behavior="scroll" direction="right" scrollamount="6" loop="1">
-            🐢🐢🐢
-        </marquee>
-
-        <marquee behavior="scroll" direction="right" scrollamount="9" loop="1">
-            🐸🐸🐸
-        </marquee>
+        <marquee behavior="scroll" direction="right" scrollamount="10" loop="1">🐰🐰🐰</marquee>
+        <marquee behavior="scroll" direction="right" scrollamount="14" loop="1">🦄🦄🦄</marquee>
+        <marquee behavior="scroll" direction="right" scrollamount="11" loop="1">🐶🐶🐶</marquee>
+        <marquee behavior="scroll" direction="right" scrollamount="12" loop="1">🦊🦊🦊</marquee>
+        <marquee behavior="scroll" direction="right" scrollamount="6" loop="1">🐢🐢🐢</marquee>
+        <marquee behavior="scroll" direction="right" scrollamount="9" loop="1">🐸🐸🐸</marquee>
+        
     </details>
 
     <h2 align="center">🏁 Game Over! 🏁</h2>
@@ -62,11 +46,11 @@
     </div>
 
     <br>
-        <div align="center">
-            <a href="https://bsambou.github.io/Interactive-2025-Barbara/Projects/Project-01/index.html" target="_blank">
+    <div align="center">
+        <a href="https://bsambou.github.io/Interactive-2025-Barbara/Projects/Project-01/index.html" target="_blank">
             🌟 Barbara Sambou’s Webpage – Click Here 🌟
-            </a>
-        </div>
+        </a>
+    </div>
     <br>
 
 </body>
