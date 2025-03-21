@@ -377,5 +377,9 @@ body {
   .chapter-five {
     background-image: url('https://i.imgur.com/cEd0Oux.png') !important;
   }
+
+  .envelope-page {
+    background-image: url('https://i.imgur.com/UonpV2N.png') !important;
+  }
 }
 
