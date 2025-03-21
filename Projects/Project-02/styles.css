@@ -1,0 +1,380 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Arial", sans-serif;
+}
+
+/* Page base background and scroll settings */
+body {
+  background-color: white;
+  overflow-y: auto;
+  scroll-behavior: smooth;
+  text-align: center;
+}
+
+/* Cover */
+.cover-page {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background: url('https://i.imgur.com/0cMC8CE.gif') no-repeat center center;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Cover Title */
+.fade-in-title {
+  font-size: 48px;
+  color: #FFD700;
+  font-weight: bold;
+  animation: fadeInUp 2s ease-out;
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.4);
+  margin-bottom: 120px;
+  transition: opacity 0.4s ease, transform 0.4s ease; 
+}
+
+/* Cover text animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Introduction */
+.intro-section {
+  position: relative;
+  padding: 80px 20px;
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.6s ease, transform 0.6s ease; 
+}
+
+/* Intro page background image */
+.intro-section::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: url('https://i.imgur.com/PILR3nK.png') no-repeat center center;
+  background-size: cover;
+  opacity: 0.8;
+  z-index: -1;
+}
+
+
+/* Intro page title */
+.intro-section h1 {
+  font-size: 32px;
+  color: #FFD700;
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* Intro page content container */
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 1100px;
+  height: 400px;
+  margin: 40px auto;
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: 10px;
+  padding: 30px;
+  position: relative;
+  transition: background 0.3s ease; 
+}
+
+/* Book img */
+.cover {
+  width: 280px;
+  height: 350px;
+  background: url('https://pbs.twimg.com/media/C4mFr_aUcAAJu_I.jpg') no-repeat center center;
+  background-size: cover;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Intro text */
+.content {
+  flex: 1;
+  padding: 30px;
+  text-align: justify;
+}
+
+.content p {
+  font-size: 18px;
+  line-height: 1.6;
+  color: #333;
+}
+
+/* Chapter containers*/
+.chapter-one,
+.chapter-two,
+.chapter-three,
+.chapter-four,
+.chapter-five {
+  position: relative;
+  padding: 80px 10px;
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+/* The effect of the background img of each chapter */
+.chapter-one::before,
+.chapter-two::before,
+.chapter-three::before,
+.chapter-four::before,
+.chapter-five::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-size: cover;
+  background-position: center;
+  opacity: 0.7;
+  z-index: -1;
+}
+
+/* Img of each chapter */
+.chapter-one::before {
+  background-image: url('https://i.imgur.com/wh8PqPn.png');
+}
+
+.chapter-two::before {
+  background-image: url('https://i.imgur.com/P1bLfFJ.png');
+}
+
+.chapter-three::before {
+  background-image: url('https://i.imgur.com/7dYZGpL.png');
+}
+
+.chapter-four::before {
+  background-image: url('https://i.imgur.com/gIjNKwe.png');
+}
+
+.chapter-five::before {
+  background-image: url('https://i.imgur.com/cEd0Oux.png');
+}
+
+/* Title style for each chapter */
+.chapter-title {
+  font-size: 32px;
+  color: #FFD700;
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+
+/* White transparent container */
+.overlay {
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: 10px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Outer frame of the timeline */
+.timeline {
+  max-width: 900px;
+  margin: 50px auto;
+  padding: 20px;
+}
+
+/* Each timeline item (including envelope and body) */
+.timeline-item {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 50px;
+  padding: 20px;
+}
+
+/* inversion arrangement */
+.timeline-item.reverse {
+  flex-direction: row-reverse;
+}
+
+.letter-box input[type="checkbox"] {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Envelope img */
+.envelope img {
+  width: 180px;
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out;
+}
+
+.envelope img:hover {
+  transform: scale(1.1);
+}
+
+/* Pop-up window location */
+.letter-popup {
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+  max-width: 600px;
+  max-height: 80vh;
+  overflow-y: auto;
+  background: url('https://i.pinimg.com/736x/ab/11/89/ab11891376f3a15015a35d7b0b3ce894.jpg') no-repeat center center;
+  background-size: cover;
+  border-radius: 15px;
+  padding: 30px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+  z-index: 10;
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+/* 显示状态 */
+.letter-box input:checked ~ .letter-popup {
+  visibility: visible;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Pop-up window text content */
+.letter-content-inside {
+  text-align: left;
+  font-size: 16px;
+  color: #333;
+  line-height: 1.6;
+  background: none;
+  padding: 0;
+  border-radius: 0;
+}
+
+/* Close button */
+.close-button {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  font-size: 24px;
+  color: #999;
+  cursor: pointer;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.close-button:hover {
+  color: #333;
+}
+
+/* Text content container */
+.chapter-content {
+  flex: 1;
+  text-align: justify;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 600px;
+}
+
+.chapter-content p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #000;
+}
+
+/* Print size */
+@media print {
+  @page {
+    size: 6in 4in portrait; 
+    margin: 0;
+  }
+
+  body {
+    margin: 0;
+    padding: 0;
+    background: white;
+  }
+
+  /* Full screen background image, no text */
+  .cover-page,
+  .intro-section,
+  .chapter-one,
+  .chapter-two,
+  .chapter-three,
+  .chapter-four,
+  .chapter-five {
+    width: 100vw;
+    height: 100vh;
+    page-break-after: always;
+    background-repeat: no-repeat !important;
+    background-size: cover !important;
+    background-position: center !important;
+    position: relative;
+  }
+
+  /* Hide all text and content */
+  .cover-page * ,
+  .intro-section * ,
+  .chapter-one * ,
+  .chapter-two * ,
+  .chapter-three * ,
+  .chapter-four * ,
+  .chapter-five * {
+    display: none !important;
+  }
+
+  /* Cancel ::before layer overlay */
+  .chapter-one::before,
+  .chapter-two::before,
+  .chapter-three::before,
+  .chapter-four::before,
+  .chapter-five::before,
+  .intro-section::before {
+    content: none !important;
+  }
+
+  /* Background img */
+  .cover-page {
+    background-image: url('https://i.imgur.com/0cMC8CE.gif') !important;
+  }
+
+  .intro-section {
+    background-image: url('https://i.imgur.com/PILR3nK.png') !important;
+  }
+
+  .chapter-one {
+    background-image: url('https://i.imgur.com/wh8PqPn.png') !important;
+  }
+
+  .chapter-two {
+    background-image: url('https://i.imgur.com/P1bLfFJ.png') !important;
+  }
+
+  .chapter-three {
+    background-image: url('https://i.imgur.com/7dYZGpL.png') !important;
+  }
+
+  .chapter-four {
+    background-image: url('https://i.imgur.com/gIjNKwe.png') !important;
+  }
+
+  .chapter-five {
+    background-image: url('https://i.imgur.com/cEd0Oux.png') !important;
+  }
+}
