@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Steaming Coffee Cup</title>
+  <style>
+    body {
+      margin: 0;
+      background: #f5f5f5;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .coffee-container {
+      position: relative;
+      width: 160px;
+      height: 100px;
+    }
+
+    .cup {
+      width: 120px;
+      height: 60px;
+      border: 5px solid green;
+      border-radius: 0 0 50px 50px;
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .cup::after {
+      content: "";
+      position: absolute;
+      width: 30px;
+      height: 30px;
+      border: 5px solid green;
+      border-radius: 50%;
+      right: -25px;
+      top: 5px;
+    }
+
+    .steam {
+      position: absolute;
+      top: -15px; 
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 8px;
+    }
+
+    .steam span {
+      width: 6px;
+      height: 30px;  
+      background: transparent;
+      border-left: 3px solid green;
+      border-radius: 50%;
+      opacity: 0;
+      animation: steam-rise 3s infinite ease-in-out;
+    }
+
+    .steam span:nth-child(1) { animation-delay: 0s; }
+    .steam span:nth-child(2) { animation-delay: 0s; }
+    .steam span:nth-child(3) { animation-delay: 0s; }
+
+    @keyframes steam-rise {
+      0% {
+        transform: translateY(0);
+        opacity: 0;
+      }
+      30% {
+        opacity: 0.8;
+      }
+      50% {
+        transform: translateY(-8px);
+        opacity: 0.6;
+      }
+      70% {
+        opacity: 0.3;
+      }
+      100% {
+        transform: translateY(-15px);
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="coffee-container">
+    <div class="steam">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <div class="cup"></div>
+  </div>
+</body>
+</html>
