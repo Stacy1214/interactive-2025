@@ -318,7 +318,8 @@ body {
   .chapter-two,
   .chapter-three,
   .chapter-four,
-  .chapter-five {
+  .chapter-five, 
+  .envelope-page {
     width: 100vw;
     height: 100vh;
     page-break-after: always;
@@ -335,7 +336,8 @@ body {
   .chapter-two * ,
   .chapter-three * ,
   .chapter-four * ,
-  .chapter-five *  {
+  .chapter-five * ,
+  .envelope-page * {
     display: none !important;
   }
 
