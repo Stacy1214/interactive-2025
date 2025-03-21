@@ -335,7 +335,7 @@ body {
   .chapter-two * ,
   .chapter-three * ,
   .chapter-four * ,
-  .chapter-five * {
+  .chapter-five *  {
     display: none !important;
   }
 
@@ -378,3 +378,4 @@ body {
     background-image: url('https://i.imgur.com/cEd0Oux.png') !important;
   }
 }
+
